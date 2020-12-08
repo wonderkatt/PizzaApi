@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace PizzaApi
 {
+    [Route("api/[controller]")]
     [ApiController]
-    [Route("[controller]")]
     public class OrderController : ControllerBase
     {
         private PizzaBL _pizzaBL;

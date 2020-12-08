@@ -16,7 +16,7 @@ namespace PizzaApi
         public List<Ingredient> GetIngredients(List<int> ingredientIDs)
         {
             var distinctIds = ingredientIDs.Distinct();
-             return CreateIngredientsFromIds(distinctIds);
+            return CreateIngredientsFromIds(distinctIds);
         }
         private List<Ingredient> CreateIngredientsFromIds(IEnumerable<int> ids)
         {
