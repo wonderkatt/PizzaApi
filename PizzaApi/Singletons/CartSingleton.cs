@@ -8,11 +8,11 @@ namespace PizzaApi
     public class CartSingleton
     {
         private static CartSingleton cart;
-        public Order order;
+        public Order Order;
 
         private CartSingleton()
         {
-            order = new Order();
+            Order = new Order();
         }
 
         public static CartSingleton Instance()

@@ -12,6 +12,7 @@ namespace PizzaApi
         {
             var kebab = new Pizza();
             kebab.Ingredients = GetBaseIngredients();
+            kebab.Name = Pizzas.Kebab.ToString();
             return kebab;
         }
 
@@ -20,13 +21,13 @@ namespace PizzaApi
             var ingredients = base.GetBaseIngredients();
             ingredients.AddRange(new List<Ingredient>
             { 
-                ingredientFactory.GetKebab(), 
-                ingredientFactory.GetMushrooms(),
-                ingredientFactory.GetOnion(),
-                ingredientFactory.GetPeperoncino(),
-                ingredientFactory.GetLettuce(),
-                ingredientFactory.GetTomato(),
-                ingredientFactory.GetKebabSauce()
+                IngredientFactory.GetKebab(), 
+                IngredientFactory.GetMushrooms(),
+                IngredientFactory.GetOnion(),
+                IngredientFactory.GetPeperoncino(),
+                IngredientFactory.GetLettuce(),
+                IngredientFactory.GetTomato(),
+                IngredientFactory.GetKebabSauce()
             });
 
             return ingredients;

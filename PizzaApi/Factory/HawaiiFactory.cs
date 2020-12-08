@@ -7,11 +7,11 @@ namespace PizzaApi
 {
     public class HawaiiFactory : PizzaFactory
     {
-
         public override Pizza GetPizza()
         {
             var hawaii = new Pizza();
             hawaii.Ingredients = GetBaseIngredients();
+            hawaii.Name = Pizzas.Hawaii.ToString();
             return hawaii;
         }
 
@@ -20,8 +20,8 @@ namespace PizzaApi
             var ingredients = base.GetBaseIngredients();
             ingredients.AddRange(new List<Ingredient>
             { 
-                ingredientFactory.GetPineapple(), 
-                ingredientFactory.GetHam() 
+                IngredientFactory.GetPineapple(), 
+                IngredientFactory.GetHam() 
             });
 
             return ingredients;

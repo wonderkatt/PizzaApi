@@ -7,21 +7,20 @@ namespace PizzaApi
 {
     public abstract class PizzaFactory 
     {
-        protected IngredientFactory ingredientFactory;
-        public PizzaFactory()
-        {
-            ingredientFactory = new IngredientFactory();
-        }
+        protected IngredientFactory IngredientFactory;
 
+        protected PizzaFactory()
+        {
+            IngredientFactory = new IngredientFactory();
+        }
         public virtual List<Ingredient> GetBaseIngredients()
         {
             return new List<Ingredient>
             {
-                ingredientFactory.GetCheese(),
-                ingredientFactory.GetTomatoSauce()
+                IngredientFactory.GetCheese(),
+                IngredientFactory.GetTomatoSauce()
             };
         }
-
         public abstract Pizza GetPizza();
     }
 }

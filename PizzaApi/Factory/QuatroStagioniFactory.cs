@@ -10,9 +10,10 @@ namespace PizzaApi
 
         public override Pizza GetPizza()
         {
-            var kebab = new Pizza();
-            kebab.Ingredients = GetBaseIngredients();
-            return kebab;
+            var quatroStagioni = new Pizza();
+            quatroStagioni.Ingredients = GetBaseIngredients();
+            quatroStagioni.Name = Pizzas.QuatroStagioni.ToString();
+            return quatroStagioni;
         }
 
         public override List<Ingredient> GetBaseIngredients()
@@ -20,11 +21,11 @@ namespace PizzaApi
             var ingredients = base.GetBaseIngredients();
             ingredients.AddRange(new List<Ingredient>
             { 
-                ingredientFactory.GetHam(), 
-                ingredientFactory.GetShrimp(),
-                ingredientFactory.GetClam(),
-                ingredientFactory.GetMushrooms(),
-                ingredientFactory.GetArtichoke()
+                IngredientFactory.GetHam(), 
+                IngredientFactory.GetShrimp(),
+                IngredientFactory.GetClam(),
+                IngredientFactory.GetMushrooms(),
+                IngredientFactory.GetArtichoke()
             });
 
             return ingredients;
