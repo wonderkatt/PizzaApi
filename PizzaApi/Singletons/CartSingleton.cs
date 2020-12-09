@@ -7,7 +7,7 @@ namespace PizzaApi
 {
     public class CartSingleton
     {
-        private static CartSingleton cart;
+        private static CartSingleton _cart;
         public Order Order;
 
         private CartSingleton()
@@ -17,11 +17,11 @@ namespace PizzaApi
 
         public static CartSingleton Instance()
         {
-            if(cart == null)
+            if(_cart == null)
             {
-                cart = new CartSingleton();
+                _cart = new CartSingleton();
             }
-            return cart;
+            return _cart;
         }
     }
 }

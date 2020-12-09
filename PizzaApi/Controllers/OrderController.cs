@@ -12,14 +12,15 @@ namespace PizzaApi
     [ApiController]
     public class OrderController : ControllerBase
     {
-        [Route("{id}")]
         [HttpPost]
-        public ActionResult SaveOrder(int id)
+        public ActionResult SaveCurrentOrder()
         {
-
             var cart = CartSingleton.Instance();
+            var orderStore = OrderStoreSingleton.Instance();
             cart.Order.Status = Status.InProgress;
             cart.Order.OrderTime = DateTime.Now;
+            orderStore.Orders.Add(orderStore.Orders.Count, cart.Order);
+            cart.Order = new Order();
 
             return Ok();
 
