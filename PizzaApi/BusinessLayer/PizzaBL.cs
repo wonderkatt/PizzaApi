@@ -22,7 +22,16 @@ namespace PizzaApi
             _quatroStagioniFactory = new QuatroStagioniFactory();
             _ingredientBL = new IngredientBL();
         }
-
+        public List<Pizza> GetAllPizzasOnMenu()
+        {
+            return new List<Pizza>
+            {
+                _margeritaFactory.GetPizza(),
+                _hawaiiFactory.GetPizza(),
+                _kebabFactory.GetPizza(),
+                _quatroStagioniFactory.GetPizza()
+            };
+        }
         public Pizza CreatePizza(PizzaDTO pizzaDTO)
         {
             var pizza = CreatePizzaFromId(pizzaDTO.Id);

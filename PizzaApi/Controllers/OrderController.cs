@@ -12,40 +12,14 @@ namespace PizzaApi
     [ApiController]
     public class OrderController : ControllerBase
     {
-        private PizzaBL _pizzaBL;
-
-        public OrderController()
-        {
-            _pizzaBL = new PizzaBL();
-        }
-        [HttpGet]
-        public ActionResult GetCurrentOrder()
-        {
-            var cart = CartSingleton.Instance();
-            if (cart.Order.IsEmpty)
-            {
-                return Ok("Your cart is empty");
-            }
-            return Ok(cart.Order);
-        }
+        [Route("{id}")]
         [HttpPost]
-        public ActionResult AddItemsToOrder([FromBody]AddToOrderRequest request)
+        public ActionResult SaveOrder(int id)
         {
-            var cart = CartSingleton.Instance();
 
-            try
-            {
-                var pizzasToAdd = new List<Pizza>();
-                foreach (var pizza in request.Pizzas)
-                { 
-                    pizzasToAdd.Add(_pizzaBL.CreatePizza(pizza));
-                }
-                cart.Order.Pizzas.AddRange(pizzasToAdd);
-            }
-            catch (ItemNotFoundException e)
-            {
-                return BadRequest(e.Message);
-            }
+            var cart = CartSingleton.Instance();
+            cart.Order.Status = Status.InProgress;
+            cart.Order.OrderTime = DateTime.Now;
 
             return Ok();
 

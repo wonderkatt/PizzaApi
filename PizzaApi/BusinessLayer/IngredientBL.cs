@@ -62,5 +62,22 @@ namespace PizzaApi
 
             return ingredients;
         }
+
+        public List<Ingredient> GetAllExtraIngredientsOnMenu()
+        {
+            return new List<Ingredient>
+            {
+                _ingredientFactory.GetHam(),
+                _ingredientFactory.GetPineapple(),
+                _ingredientFactory.GetMushrooms(),
+                _ingredientFactory.GetOnion(),
+                _ingredientFactory.GetKebabSauce(),
+                _ingredientFactory.GetShrimp(),
+                _ingredientFactory.GetClam(),
+                _ingredientFactory.GetArtichoke(),
+                _ingredientFactory.GetKebab(),
+                _ingredientFactory.GetCilantro()
+            };
+        }
     }
 }

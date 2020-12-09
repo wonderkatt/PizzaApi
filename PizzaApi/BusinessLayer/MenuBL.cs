@@ -10,6 +10,18 @@ namespace PizzaApi
 {
     public class MenuBL
     {
+
+        private IngredientFactory _ingredientFactory;
+        private readonly PizzaBL _pizzaBL;
+        private readonly DrinkBL _drinkBL;
+        private readonly IngredientBL _ingredientBL;
+
+        public MenuBL()
+        {
+            _pizzaBL = new PizzaBL();
+            _drinkBL = new DrinkBL();
+            _ingredientBL = new IngredientBL();
+        }
         public Menu GetMenu()
         {
             var menu = ComposeMenu();
@@ -20,23 +32,11 @@ namespace PizzaApi
         {
             var menu = new Menu
             {
-                Pizzas = GetPizzasOnMenu(),
-                Drinks = GetDrinksOnMenu(),
-                ExtraIngredients = GetExtraIngredientsOnMenu()
+                Pizzas = _pizzaBL.GetAllPizzasOnMenu(),
+                Drinks = _drinkBL.GetAllDrinksOnMenu(),
+                ExtraIngredients = _ingredientBL.GetAllExtraIngredientsOnMenu()
             };
             return menu;
-        }
-        private List<Pizza> GetPizzasOnMenu()
-        {
-            return new List<Pizza>();
-        }
-        private List<Drink> GetDrinksOnMenu()
-        {
-            return new List<Drink>();
-        }
-        private List<Ingredient> GetExtraIngredientsOnMenu()
-        {
-            throw new NotImplementedException();
         }
     }
 }
