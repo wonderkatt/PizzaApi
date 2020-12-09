@@ -11,7 +11,6 @@ namespace PizzaApi
     public class MenuBL
     {
 
-        private IngredientFactory _ingredientFactory;
         private readonly PizzaBL _pizzaBL;
         private readonly DrinkBL _drinkBL;
         private readonly IngredientBL _ingredientBL;

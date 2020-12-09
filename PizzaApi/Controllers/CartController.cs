@@ -21,13 +21,13 @@ namespace PizzaApi.Controllers
         }
 
         [HttpGet]
-        public ActionResult GetCurrentOrder()
+        public ActionResult GetCartContents()
         {
             var cart = CartSingleton.Instance();
             return cart.Order.IsEmpty ? Ok("Your cart is empty") : Ok(cart.Order);
         }
         [HttpPost]
-        public ActionResult AddItemsToOrder([FromBody] AddToOrderRequest request)
+        public ActionResult AddItemsToCart([FromBody] AddToOrderRequest request)
         {
             var cart = CartSingleton.Instance();
 
