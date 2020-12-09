@@ -23,41 +23,7 @@ namespace PizzaApi
             var ingredients = new List<Ingredient>();
             foreach (var id in ids)
             {
-                switch (id)
-                {
-                    case (int) ExtraIngredients.Ham:
-                        ingredients.Add(_ingredientFactory.GetHam());
-                        break;
-                    case (int) ExtraIngredients.Pineapple:
-                        ingredients.Add(_ingredientFactory.GetPineapple());
-                        break;
-                    case (int) ExtraIngredients.Mushrooms:
-                        ingredients.Add(_ingredientFactory.GetMushrooms());
-                        break;
-                    case (int) ExtraIngredients.Onion:
-                        ingredients.Add(_ingredientFactory.GetOnion());
-                        break;
-                    case (int) ExtraIngredients.KebabSauce:
-                        ingredients.Add(_ingredientFactory.GetKebabSauce());
-                        break;
-                    case (int) ExtraIngredients.Shrimp:
-                        ingredients.Add(_ingredientFactory.GetShrimp());
-                        break;
-                    case (int) ExtraIngredients.Clam:
-                        ingredients.Add(_ingredientFactory.GetClam());
-                        break;
-                    case (int) ExtraIngredients.Artichoke:
-                        ingredients.Add(_ingredientFactory.GetArtichoke());
-                        break;
-                    case (int) ExtraIngredients.Kebab:
-                        ingredients.Add(_ingredientFactory.GetKebab());
-                        break;
-                    case (int) ExtraIngredients.Cilantro:
-                        ingredients.Add(_ingredientFactory.GetCilantro());
-                        break;
-                    default:
-                        throw new ItemNotFoundException("ingredient " + id);
-                }
+                ingredients.Add(CreateIngredientFromId(id));
             }
 
             return ingredients;
@@ -65,18 +31,30 @@ namespace PizzaApi
 
         public List<Ingredient> GetAllExtraIngredientsOnMenu()
         {
-            return new List<Ingredient>
+            var ingredientsOnMenu = new List<Ingredient>();
+            foreach (int ingredientId in Enum.GetValues(typeof(ExtraIngredients)))
             {
-                _ingredientFactory.GetHam(),
-                _ingredientFactory.GetPineapple(),
-                _ingredientFactory.GetMushrooms(),
-                _ingredientFactory.GetOnion(),
-                _ingredientFactory.GetKebabSauce(),
-                _ingredientFactory.GetShrimp(),
-                _ingredientFactory.GetClam(),
-                _ingredientFactory.GetArtichoke(),
-                _ingredientFactory.GetKebab(),
-                _ingredientFactory.GetCilantro()
+                ingredientsOnMenu.Add(CreateIngredientFromId(ingredientId));
+            }
+
+            return ingredientsOnMenu;
+        }
+
+        private Ingredient CreateIngredientFromId(int id)
+        {
+            return id switch
+            {
+                (int) ExtraIngredients.Ham => _ingredientFactory.GetHam(),
+                (int) ExtraIngredients.Pineapple => _ingredientFactory.GetPineapple(),
+                (int) ExtraIngredients.Mushrooms => _ingredientFactory.GetMushrooms(),
+                (int) ExtraIngredients.Onion => _ingredientFactory.GetOnion(),
+                (int) ExtraIngredients.KebabSauce => _ingredientFactory.GetKebabSauce(),
+                (int) ExtraIngredients.Shrimp => _ingredientFactory.GetShrimp(),
+                (int) ExtraIngredients.Clam => _ingredientFactory.GetClam(),
+                (int) ExtraIngredients.Artichoke => _ingredientFactory.GetArtichoke(),
+                (int) ExtraIngredients.Kebab => _ingredientFactory.GetKebab(),
+                (int) ExtraIngredients.Cilantro => _ingredientFactory.GetCilantro(),
+                _ => throw new ItemNotFoundException("ingredient " + id)
             };
         }
     }
