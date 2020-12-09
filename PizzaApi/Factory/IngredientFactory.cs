@@ -10,7 +10,7 @@ namespace PizzaApi
         public  Ingredient GetKebab()
         {
             var ingredient = new Ingredient();
-            ingredient.Cost = 20;
+            ingredient.Price = 20;
             ingredient.Name = "Kebab";
             return ingredient;
         }
@@ -18,7 +18,7 @@ namespace PizzaApi
         public Ingredient GetHam()
         {
             var ingredient = new Ingredient();
-            ingredient.Cost = 10;
+            ingredient.Price = 10;
             ingredient.Name = "Ham";
             return ingredient;
         }
@@ -26,7 +26,7 @@ namespace PizzaApi
         public Ingredient GetPineapple()
         {
             var ingredient = new Ingredient();
-            ingredient.Cost = 10;
+            ingredient.Price = 10;
             ingredient.Name = "Pineapple";
             return ingredient;
         }
@@ -34,7 +34,7 @@ namespace PizzaApi
         public Ingredient GetArtichoke()
         {
             var ingredient = new Ingredient();
-            ingredient.Cost = 15;
+            ingredient.Price = 15;
             ingredient.Name = "Artichoke";
             return ingredient;
         }
@@ -42,7 +42,7 @@ namespace PizzaApi
         public Ingredient GetCilantro()
         {
             var ingredient = new Ingredient();
-            ingredient.Cost = 20;
+            ingredient.Price = 20;
             ingredient.Name = "Cilantro";
             return ingredient;
         }
@@ -50,7 +50,7 @@ namespace PizzaApi
         public Ingredient GetClam()
         {
             var ingredient = new Ingredient();
-            ingredient.Cost = 15;
+            ingredient.Price = 15;
             ingredient.Name = "Clam";
             return ingredient;
         }
@@ -58,7 +58,7 @@ namespace PizzaApi
         public Ingredient GetShrimp()
         {
             var ingredient = new Ingredient();
-            ingredient.Cost = 15;
+            ingredient.Price = 15;
             ingredient.Name = "Shrimp";
             return ingredient;
         }
@@ -66,7 +66,7 @@ namespace PizzaApi
         public Ingredient GetLettuce()
         {
             var ingredient = new Ingredient();
-            ingredient.Cost = 0;
+            ingredient.Price = 0;
             ingredient.Name = "Lettuce";
             return ingredient;
         }
@@ -74,7 +74,7 @@ namespace PizzaApi
         public Ingredient GetKebabSauce()
         {
             var ingredient = new Ingredient();
-            ingredient.Cost = 10;
+            ingredient.Price = 10;
             ingredient.Name = "Kebab Sauce";
             return ingredient;
         }
@@ -82,7 +82,7 @@ namespace PizzaApi
         public Ingredient GetTomato()
         {
             var ingredient = new Ingredient();
-            ingredient.Cost = 0;
+            ingredient.Price = 0;
             ingredient.Name = "Tomato";
             return ingredient;
         }
@@ -90,7 +90,7 @@ namespace PizzaApi
         public Ingredient GetPeperoncino()
         {
             var ingredient = new Ingredient();
-            ingredient.Cost = 0;
+            ingredient.Price = 0;
             ingredient.Name = "Peperoncino";
             return ingredient;
         }
@@ -98,7 +98,7 @@ namespace PizzaApi
         public Ingredient GetOnion()
         {
             var ingredient = new Ingredient();
-            ingredient.Cost = 10;
+            ingredient.Price = 10;
             ingredient.Name = "Onion";
             return ingredient;
         }
@@ -106,7 +106,7 @@ namespace PizzaApi
         public Ingredient GetMushrooms()
         {
             var ingredient = new Ingredient();
-            ingredient.Cost = 10;
+            ingredient.Price = 10;
             ingredient.Name = "Mushrooms";
             return ingredient;
         }
@@ -114,7 +114,7 @@ namespace PizzaApi
         public Ingredient GetCheese()
         {
             var ingredient = new Ingredient();
-            ingredient.Cost = 0;
+            ingredient.Price = 0;
             ingredient.Name = "Cheese";
             return ingredient;
         }
@@ -122,7 +122,7 @@ namespace PizzaApi
         public Ingredient GetTomatoSauce()
         {
             var ingredient = new Ingredient();
-            ingredient.Cost = 0;
+            ingredient.Price = 0;
             ingredient.Name = "Tomato Sauce";
             return ingredient;
         }

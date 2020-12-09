@@ -9,7 +9,7 @@ namespace PizzaApi
         public bool IsEmpty => !Pizzas.Any() && !Drinks.Any();
         public List<Pizza> Pizzas { get; set; }
         public List<Drink> Drinks { get; set; }
-        public int Cost { get; set; }
+        public int TotalPrice { get; set; }
         public DateTime OrderTime { get; set; }
         public Status Status;
 

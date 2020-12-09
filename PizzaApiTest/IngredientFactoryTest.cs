@@ -21,7 +21,7 @@ namespace PizzaApiTest
             var ingredient = factory.GetKebab();
 
             Assert.AreEqual(ingredient.Name, expectedName);
-            Assert.AreEqual(ingredient.Cost, expectedCost);
+            Assert.AreEqual(ingredient.Price, expectedCost);
         }
 
         [TestMethod]
@@ -34,7 +34,7 @@ namespace PizzaApiTest
             var ingredient = factory.GetCilantro();
 
             Assert.AreEqual(ingredient.Name, expectedName);
-            Assert.AreEqual(ingredient.Cost, expectedCost);
+            Assert.AreEqual(ingredient.Price, expectedCost);
         }
 
         [TestMethod]
@@ -47,7 +47,7 @@ namespace PizzaApiTest
             var ingredient = factory.GetShrimp();
 
             Assert.AreEqual(ingredient.Name, expectedName);
-            Assert.AreEqual(ingredient.Cost, expectedCost);
+            Assert.AreEqual(ingredient.Price, expectedCost);
         }
 
         [TestMethod]
@@ -60,7 +60,7 @@ namespace PizzaApiTest
             var ingredient = factory.GetArtichoke();
 
             Assert.AreEqual(ingredient.Name, expectedName);
-            Assert.AreEqual(ingredient.Cost, expectedCost);
+            Assert.AreEqual(ingredient.Price, expectedCost);
         }
 
         [TestMethod]
@@ -73,7 +73,7 @@ namespace PizzaApiTest
             var ingredient = factory.GetClam();
 
             Assert.AreEqual(ingredient.Name, expectedName);
-            Assert.AreEqual(ingredient.Cost, expectedCost);
+            Assert.AreEqual(ingredient.Price, expectedCost);
         }
 
         [TestMethod]
@@ -86,7 +86,7 @@ namespace PizzaApiTest
             var ingredient = factory.GetHam();
 
             Assert.AreEqual(ingredient.Name, expectedName);
-            Assert.AreEqual(ingredient.Cost, expectedCost);
+            Assert.AreEqual(ingredient.Price, expectedCost);
         }
 
         [TestMethod]
@@ -99,7 +99,7 @@ namespace PizzaApiTest
             var ingredient = factory.GetPineapple();
 
             Assert.AreEqual(ingredient.Name, expectedName);
-            Assert.AreEqual(ingredient.Cost, expectedCost);
+            Assert.AreEqual(ingredient.Price, expectedCost);
         }
 
         [TestMethod]
@@ -112,7 +112,7 @@ namespace PizzaApiTest
             var ingredient = factory.GetMushrooms();
 
             Assert.AreEqual(ingredient.Name, expectedName);
-            Assert.AreEqual(ingredient.Cost, expectedCost);
+            Assert.AreEqual(ingredient.Price, expectedCost);
         }
 
         [TestMethod]
@@ -125,7 +125,7 @@ namespace PizzaApiTest
             var ingredient = factory.GetOnion();
 
             Assert.AreEqual(ingredient.Name, expectedName);
-            Assert.AreEqual(ingredient.Cost, expectedCost);
+            Assert.AreEqual(ingredient.Price, expectedCost);
         }
 
         [TestMethod]
@@ -138,7 +138,7 @@ namespace PizzaApiTest
             var ingredient = factory.GetKebabSauce();
 
             Assert.AreEqual(ingredient.Name, expectedName);
-            Assert.AreEqual(ingredient.Cost, expectedCost);
+            Assert.AreEqual(ingredient.Price, expectedCost);
         }
 
 
