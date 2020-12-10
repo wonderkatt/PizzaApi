@@ -32,7 +32,7 @@ namespace PizzaApiTest
                 Id = 1,
                 ExtraIngredients = new List<int>
                 {
-                    (int)ExtraIngredients.Mushrooms
+                    (int)Ingredients.Mushrooms
                 }
             };
             var expected = margeritaFactory.GetPizza();
@@ -42,6 +42,17 @@ namespace PizzaApiTest
 
             Assert.AreEqual(expected.Name, pizza.Name);
             Assert.AreEqual(expected.ExtraIngredients[0].Name, pizza.ExtraIngredients[0].Name);
+        }
+        [TestMethod]
+        public void GetAllPizzas_ShouldCreateAllPizzas()
+        {
+            var pizzaBL = new PizzaBL();
+            var expected = 4;
+
+            var actual = pizzaBL.GetAllPizzasOnMenu();
+
+            Assert.AreEqual(actual.Count, expected);
+
         }
     }
 }

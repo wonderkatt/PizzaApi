@@ -38,15 +38,23 @@ namespace PizzaApi.Controllers
                 {
                     pizzasToAdd.Add(_pizzaBL.CreatePizza(pizza));
                 }
-                cart.Order.Pizzas.AddRange(pizzasToAdd);
                 var drinksToAdd = new List<Drink>();
                 foreach (var drink in request.Drinks)
                 {
                     drinksToAdd.Add(_drinkBL.CreateDrink(drink));
                 }
+                cart.Order.Pizzas.AddRange(pizzasToAdd);
                 cart.Order.Drinks.AddRange(drinksToAdd);
             }
             catch (ItemNotFoundException e)
+            {
+                return BadRequest(e.Message);
+            }
+            catch(NoIngredientsFoundException e)
+            {
+                return BadRequest(e.Message);
+            }
+            catch(InvalidIngredientException e)
             {
                 return BadRequest(e.Message);
             }

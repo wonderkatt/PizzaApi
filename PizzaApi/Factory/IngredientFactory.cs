@@ -9,121 +9,151 @@ namespace PizzaApi
     {
         public  Ingredient GetKebab()
         {
-            var ingredient = new Ingredient();
-            ingredient.Price = 20;
-            ingredient.Name = "Kebab";
+            var ingredient = new Ingredient
+            {
+                Price = 20,
+                Name = "Kebab"
+            };
             return ingredient;
         }
 
         public Ingredient GetHam()
         {
-            var ingredient = new Ingredient();
-            ingredient.Price = 10;
-            ingredient.Name = "Ham";
+            var ingredient = new Ingredient
+            {
+                Price = 10,
+                Name = "Ham"
+            };
             return ingredient;
         }
 
         public Ingredient GetPineapple()
         {
-            var ingredient = new Ingredient();
-            ingredient.Price = 10;
-            ingredient.Name = "Pineapple";
+            var ingredient = new Ingredient
+            {
+                Price = 10,
+                Name = "Pineapple"
+            };
             return ingredient;
         }
 
         public Ingredient GetArtichoke()
         {
-            var ingredient = new Ingredient();
-            ingredient.Price = 15;
-            ingredient.Name = "Artichoke";
+            var ingredient = new Ingredient
+            {
+                Price = 15,
+                Name = "Artichoke"
+            };
             return ingredient;
         }
 
         public Ingredient GetCilantro()
         {
-            var ingredient = new Ingredient();
-            ingredient.Price = 20;
-            ingredient.Name = "Cilantro";
+            var ingredient = new Ingredient
+            {
+                Price = 20,
+                Name = "Cilantro"
+            };
             return ingredient;
         }
 
         public Ingredient GetClam()
         {
-            var ingredient = new Ingredient();
-            ingredient.Price = 15;
-            ingredient.Name = "Clam";
+            var ingredient = new Ingredient
+            {
+                Price = 15,
+                Name = "Clam"
+            };
             return ingredient;
         }
 
         public Ingredient GetShrimp()
         {
-            var ingredient = new Ingredient();
-            ingredient.Price = 15;
-            ingredient.Name = "Shrimp";
+            var ingredient = new Ingredient
+            {
+                Price = 15,
+                Name = "Shrimp"
+            };
             return ingredient;
         }
 
         public Ingredient GetLettuce()
         {
-            var ingredient = new Ingredient();
-            ingredient.Price = 0;
-            ingredient.Name = "Lettuce";
+            var ingredient = new Ingredient
+            {
+                Price = 0,
+                Name = "Lettuce"
+            };
             return ingredient;
         }
 
         public Ingredient GetKebabSauce()
         {
-            var ingredient = new Ingredient();
-            ingredient.Price = 10;
-            ingredient.Name = "Kebab Sauce";
+            var ingredient = new Ingredient
+            {
+                Price = 10,
+                Name = "Kebab Sauce"
+            };
             return ingredient;
         }
 
         public Ingredient GetTomato()
         {
-            var ingredient = new Ingredient();
-            ingredient.Price = 0;
-            ingredient.Name = "Tomato";
+            var ingredient = new Ingredient
+            {
+                Price = 0,
+                Name = "Tomato"
+            };
             return ingredient;
         }
 
         public Ingredient GetPeperoncino()
         {
-            var ingredient = new Ingredient();
-            ingredient.Price = 0;
-            ingredient.Name = "Peperoncino";
+            var ingredient = new Ingredient
+            {
+                Price = 0,
+                Name = "Peperoncino"
+            };
             return ingredient;
         }
 
         public Ingredient GetOnion()
         {
-            var ingredient = new Ingredient();
-            ingredient.Price = 10;
-            ingredient.Name = "Onion";
+            var ingredient = new Ingredient
+            {
+                Price = 10,
+                Name = "Onion"
+            };
             return ingredient;
         }
 
         public Ingredient GetMushrooms()
         {
-            var ingredient = new Ingredient();
-            ingredient.Price = 10;
-            ingredient.Name = "Mushrooms";
+            var ingredient = new Ingredient
+            {
+                Price = 10,
+                Name = "Mushrooms"
+            };
             return ingredient;
         }
 
         public Ingredient GetCheese()
         {
-            var ingredient = new Ingredient();
-            ingredient.Price = 0;
-            ingredient.Name = "Cheese";
+            var ingredient = new Ingredient
+            {
+                Price = 0,
+                Name = "Cheese"
+            };
             return ingredient;
         }
 
         public Ingredient GetTomatoSauce()
         {
-            var ingredient = new Ingredient();
-            ingredient.Price = 0;
-            ingredient.Name = "Tomato Sauce";
+            var ingredient = new Ingredient
+            {
+                Price = 0,
+                Name = "Tomato Sauce"
+            };
             return ingredient;
         }
 

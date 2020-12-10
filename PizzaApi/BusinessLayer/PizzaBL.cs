@@ -8,11 +8,11 @@ namespace PizzaApi
 {
     public class PizzaBL
     {
-        private MargeritaFactory _margeritaFactory;
-        private HawaiiFactory _hawaiiFactory;
-        private KebabFactory _kebabFactory;
-        private QuatroStagioniFactory _quatroStagioniFactory;
-        private IngredientBL _ingredientBL;
+        private readonly MargeritaFactory _margeritaFactory;
+        private readonly HawaiiFactory _hawaiiFactory;
+        private readonly KebabFactory _kebabFactory;
+        private readonly QuatroStagioniFactory _quatroStagioniFactory;
+        private readonly IngredientBL _ingredientBL;
 
         public PizzaBL()
         {

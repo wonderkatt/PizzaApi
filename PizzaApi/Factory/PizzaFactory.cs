@@ -1,26 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace PizzaApi
 {
     public abstract class PizzaFactory 
     {
-        protected IngredientFactory IngredientFactory;
+        
+        private readonly MenuDAL _menuDAL;
+        private readonly IngredientBL _ingredientBL;
 
         protected PizzaFactory()
         {
-            IngredientFactory = new IngredientFactory();
+            _ingredientBL = new IngredientBL();
+            _menuDAL = new MenuDAL();
         }
-        public virtual List<Ingredient> GetBaseIngredients()
+
+        public virtual List<Ingredient> GetBaseIngredients(Pizzas pizzaType)
         {
-            return new List<Ingredient>
+            var ingredients = _menuDAL.GetIngredientsFromMenuForPizza(pizzaType);
+            var baseIngredients = new List<Ingredient>();
+            foreach (var ingredient in ingredients)
             {
-                IngredientFactory.GetCheese(),
-                IngredientFactory.GetTomatoSauce()
-            };
-        }
+                baseIngredients.Add(_ingredientBL.CreateIngredientFromString(ingredient));
+            }
+            return baseIngredients;
+        } 
+
         public abstract Pizza GetPizza();
     }
 }

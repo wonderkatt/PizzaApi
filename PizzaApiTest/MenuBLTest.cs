@@ -13,16 +13,16 @@ namespace PizzaApiTest
     [TestClass]
     public class MenuBLTest
     {
-        [TestMethod]
-        public void GetFullMenu_ReturnsValidJsonMenu()
-        {
-            var testFilePath = AppDomain.CurrentDomain.BaseDirectory + @"\menu.json";
-            var expectedTestMenu = File.ReadAllText(testFilePath);
+        //[TestMethod]
+        //public void GetFullMenu_ReturnsValidJsonMenu()
+        //{
+        //    var testFilePath = AppDomain.CurrentDomain.BaseDirectory + @"\menu.json";
+        //    var expectedTestMenu = File.ReadAllText(testFilePath);
 
-            var menuBL = new MenuBL();
+        //    var menuBL = new MenuBL();
 
-            var menu = menuBL.GetMenu();
+        //    var menu = menuBL.GetMenu();
 
-        }
+        //}
     }
 }

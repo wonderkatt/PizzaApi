@@ -9,9 +9,11 @@ namespace PizzaApi
     {
         public override Pizza GetPizza()
         {
-            var margerita = new Pizza();
-            margerita.Ingredients = GetBaseIngredients();
-            margerita.Name = Pizzas.Margerita.ToString();
+            var margerita = new Pizza
+            {
+                Ingredients = GetBaseIngredients(Pizzas.Margerita),
+                Name = Pizzas.Margerita.ToString()
+            };
             return margerita;
         }
 

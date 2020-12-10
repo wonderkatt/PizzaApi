@@ -8,9 +8,12 @@ namespace PizzaApi
 {
     public class Menu
     {
-        public Dictionary<int,Pizza> Pizzas{ get; set; }
-        public Dictionary<int, Drink> Drinks { get; set; }
-        public Dictionary<int, Ingredient> ExtraIngredients { get; set; }
+        //public Dictionary<int,Pizza> Pizzas{ get; set; }
+        //public Dictionary<int, Drink> Drinks { get; set; }
+        //public Dictionary<int, Ingredient> ExtraIngredients { get; set; }
+        public List<MenuItemPizza> Pizzas { get; set; }
+        public List<Drink> Drinks { get; set; }
+        
 
     }
 }

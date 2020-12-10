@@ -7,7 +7,7 @@ namespace PizzaApi
 {
     public class IngredientBL
     {
-        private IngredientFactory _ingredientFactory;
+        private readonly IngredientFactory _ingredientFactory;
 
         public IngredientBL()
         {
@@ -28,33 +28,46 @@ namespace PizzaApi
 
             return ingredients;
         }
-
-        public List<Ingredient> GetAllExtraIngredientsOnMenu()
-        {
-            var ingredientsOnMenu = new List<Ingredient>();
-            foreach (int ingredientId in Enum.GetValues(typeof(ExtraIngredients)))
-            {
-                ingredientsOnMenu.Add(CreateIngredientFromId(ingredientId));
-            }
-
-            return ingredientsOnMenu;
-        }
-
         private Ingredient CreateIngredientFromId(int id)
         {
             return id switch
             {
-                (int) ExtraIngredients.Ham => _ingredientFactory.GetHam(),
-                (int) ExtraIngredients.Pineapple => _ingredientFactory.GetPineapple(),
-                (int) ExtraIngredients.Mushrooms => _ingredientFactory.GetMushrooms(),
-                (int) ExtraIngredients.Onion => _ingredientFactory.GetOnion(),
-                (int) ExtraIngredients.KebabSauce => _ingredientFactory.GetKebabSauce(),
-                (int) ExtraIngredients.Shrimp => _ingredientFactory.GetShrimp(),
-                (int) ExtraIngredients.Clam => _ingredientFactory.GetClam(),
-                (int) ExtraIngredients.Artichoke => _ingredientFactory.GetArtichoke(),
-                (int) ExtraIngredients.Kebab => _ingredientFactory.GetKebab(),
-                (int) ExtraIngredients.Cilantro => _ingredientFactory.GetCilantro(),
+                (int) Ingredients.Ham => _ingredientFactory.GetHam(),
+                (int) Ingredients.Pineapple => _ingredientFactory.GetPineapple(),
+                (int) Ingredients.Mushrooms => _ingredientFactory.GetMushrooms(),
+                (int) Ingredients.Onion => _ingredientFactory.GetOnion(),
+                (int) Ingredients.KebabSauce => _ingredientFactory.GetKebabSauce(),
+                (int) Ingredients.Shrimp => _ingredientFactory.GetShrimp(),
+                (int) Ingredients.Clam => _ingredientFactory.GetClam(),
+                (int) Ingredients.Artichoke => _ingredientFactory.GetArtichoke(),
+                (int) Ingredients.Kebab => _ingredientFactory.GetKebab(),
+                (int) Ingredients.Cilantro => _ingredientFactory.GetCilantro(),
                 _ => throw new ItemNotFoundException("ingredient " + id)
+            };
+        }
+
+        public Ingredient CreateIngredientFromString(string ingredientName)
+        {
+            var parsedName = StringFormater.RemoveSpacesFromString(ingredientName);
+
+            return parsedName switch
+            {
+                "Ham" => _ingredientFactory.GetHam(),
+                "Pineapple" => _ingredientFactory.GetPineapple(),
+                "Mushrooms" => _ingredientFactory.GetMushrooms(),
+                "Onion" => _ingredientFactory.GetOnion(),
+                "KebabSauce" => _ingredientFactory.GetKebabSauce(),
+                "Shrimp" => _ingredientFactory.GetShrimp(),
+                "Clam" => _ingredientFactory.GetClam(),
+                "Artichoke" => _ingredientFactory.GetArtichoke(),
+                "Kebab" => _ingredientFactory.GetKebab(),
+                "Cilantro" => _ingredientFactory.GetCilantro(),
+                "Cheese" => _ingredientFactory.GetCheese(),
+                "TomatoSauce" => _ingredientFactory.GetTomatoSauce(),
+                "Peperoncino" => _ingredientFactory.GetPeperoncino(),
+                "Tomato" => _ingredientFactory.GetTomato(),
+                "Lettuce" => _ingredientFactory.GetLettuce(),
+                _ => throw new InvalidIngredientException(parsedName)
             };
         }
     }

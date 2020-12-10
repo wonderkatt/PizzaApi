@@ -9,23 +9,12 @@ namespace PizzaApi
     {
         public override Pizza GetPizza()
         {
-            var hawaii = new Pizza();
-            hawaii.Ingredients = GetBaseIngredients();
-            hawaii.Name = Pizzas.Hawaii.ToString();
+            var hawaii = new Pizza
+            {
+                Ingredients = GetBaseIngredients(Pizzas.Hawaii),
+                Name = Pizzas.Hawaii.ToString()
+            };
             return hawaii;
         }
-
-        public override List<Ingredient> GetBaseIngredients()
-        {
-            var ingredients = base.GetBaseIngredients();
-            ingredients.AddRange(new List<Ingredient>
-            { 
-                IngredientFactory.GetPineapple(), 
-                IngredientFactory.GetHam() 
-            });
-
-            return ingredients;
-        }
-
     }
 }
