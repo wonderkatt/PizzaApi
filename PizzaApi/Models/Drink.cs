@@ -2,7 +2,6 @@
 {
     public class Drink : IPurchasable
     {
-        public int Id { get; set; }
         public string Name { get; }
         public int Price { get; }
 

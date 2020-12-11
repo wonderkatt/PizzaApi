@@ -4,12 +4,7 @@
     {
         public override Pizza GetPizza()
         {
-            var margerita = new Pizza
-            {
-                Ingredients = GetBaseIngredients(Pizzas.Margerita),
-                Name = Pizzas.Margerita.ToString()
-            };
-            return margerita;
+            return GetPizzaFromMenu(Pizzas.Margerita);
         }
 
     }

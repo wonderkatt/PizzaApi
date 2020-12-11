@@ -20,6 +20,8 @@ namespace PizzaApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddSingleton<CartSingleton>();
+            services.AddSingleton<OrderStoreSingleton>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "PizzaApi", Version = "v1" });

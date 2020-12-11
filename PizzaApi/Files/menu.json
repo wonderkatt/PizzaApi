@@ -3,25 +3,139 @@
     {
       "Id": 1,
       "Name": "Margerita",
-      "Ingredients": [ "Cheese", "Tomato Sauce" ],
+      "Ingredients": [
+        {
+          "Id": 11,
+          "Name": "Cheese",
+          "Price": 0
+        },
+        {
+          "Id": 12,
+          "Name": "Tomato Sauce",
+          "Price": 0
+        }
+      ],
       "Price": 85
     },
     {
       "Id": 2,
       "Name": "Hawaii",
-      "Ingredients": [ "Cheese", "Tomato Sauce", "Ham", "Pineapple" ],
+      "Ingredients": [
+        {
+          "Id": 11,
+          "Name": "Cheese",
+          "Price": 0
+        },
+        {
+          "Id": 12,
+          "Name": "Tomato Sauce",
+          "Price": 0
+        },
+        {
+          "Id": 1,
+          "Name": "Ham",
+          "Price": 0
+        },
+        {
+          "Id": 2,
+          "Name": "Pineapple",
+          "Price": 0
+        }
+      ],
       "Price": 95
     },
     {
       "Id": 3,
       "Name": "Kebab",
-      "Ingredients": [ "Cheese", "Tomato Sauce", "Kebab", "Mushrooms", "Onion", "Peperoncino", "Lettuce", "Tomato", "Kebab Sauce" ],
+      "Ingredients": [
+        {
+          "Id": 11,
+          "Name": "Cheese",
+          "Price": 0
+        },
+        {
+          "Id": 12,
+          "Name": "Tomato Sauce",
+          "Price": 0
+        },
+        {
+          "Id": 9,
+          "Name": "Kebab",
+          "Price": 0
+        },
+        {
+          "Id": 3,
+          "Name": "Mushrooms",
+          "Price": 0
+        },
+        {
+          "Id": 4,
+          "Name": "Onion",
+          "Price": 0
+        },
+        {
+          "Id": 13,
+          "Name": "Peperoncino",
+          "Price": 0
+        },
+        {
+          "Id": 15,
+          "Name": "Lettuce",
+          "Price": 0
+        },
+        {
+          "Id": 14,
+          "Name": "Tomato",
+          "Price": 0
+        },
+        {
+          "Id": 5,
+          "Name": "Kebab Sauce",
+          "Price": 0
+        }
+      ],
       "Price": 115
     },
     {
       "Id": 4,
       "Name": "Quatro Stagioni",
-      "Ingredients": [ "Cheese", "Tomato Sauce", "Ham", "Shrimp", "Clam", "Mushrooms", "Artichoke" ],
+      "Ingredients": [
+        {
+          "Id": 11,
+          "Name": "Cheese",
+          "Price": 0
+        },
+        {
+          "Id": 12,
+          "Name": "Tomato Sauce",
+          "Price": 0
+        },
+        {
+          "Id": 1,
+          "Name": "Ham",
+          "Price": 0
+        },
+        {
+          "Id": 6,
+          "Name": "Shrimp",
+          "Price": 0
+        },
+        {
+          "Id": 7,
+          "Name": "Clam",
+          "Price": 0
+        },
+        {
+          "Id": 3,
+          "Name": "Mushrooms",
+          "Price": 0
+        },
+        {
+          "Id": 8,
+          "Name": "Artichoke",
+          "Price": 0
+        }
+      ],
       "Price": 115
     }
   ],
@@ -41,5 +155,57 @@
       "Name": "Sprite",
       "Price": 25
     }
-  ]
+  ],
+  "ExtraIngredients": [
+    {
+      "Id": 1,
+      "Name": "Ham",
+      "Price": 10
+    },
+    {
+      "Id": 2,
+      "Name": "Pineapple",
+      "Price": 10
+    },
+    {
+      "Id": 3,
+      "Name": "Mushrooms",
+      "Price": 10
+    },
+    {
+      "Id": 4,
+      "Name": "Onion",
+      "Price": 10
+    },
+    {
+      "Id": 5,
+      "Name": "KebabSauce",
+      "Price": 10
+    },
+    {
+      "Id": 6,
+      "Name": "Shrimp",
+      "Price": 15
+    },
+    {
+      "Id": 7,
+      "Name": "Clam",
+      "Price": 15
+    },
+    {
+      "Id": 8,
+      "Name": "Artichoke",
+      "Price": 15
+    },
+    {
+      "Id": 9,
+      "Name": "Kebab",
+      "Price": 20
+    },
+    {
+      "Id": 10,
+      "Name": "Cilantro",
+      "Price": 20
+    }
+  ] 
 }

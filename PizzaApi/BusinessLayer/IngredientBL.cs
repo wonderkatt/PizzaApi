@@ -46,9 +46,7 @@ namespace PizzaApi
 
         public Ingredient CreateIngredientFromString(string ingredientName)
         {
-            var parsedName = StringFormater.RemoveSpacesFromString(ingredientName);
-
-            return parsedName switch
+            return ingredientName.RemoveSpacesFromString() switch
             {
                 "Ham" => _ingredientFactory.GetHam(),
                 "Pineapple" => _ingredientFactory.GetPineapple(),
@@ -65,7 +63,7 @@ namespace PizzaApi
                 "Peperoncino" => _ingredientFactory.GetPeperoncino(),
                 "Tomato" => _ingredientFactory.GetTomato(),
                 "Lettuce" => _ingredientFactory.GetLettuce(),
-                _ => throw new InvalidIngredientException(parsedName)
+                _ => throw new ItemNotFoundException(ingredientName)
             };
         }
     }

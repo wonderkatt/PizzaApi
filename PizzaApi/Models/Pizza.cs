@@ -6,7 +6,6 @@ namespace PizzaApi
     {
         public string Name { get; set; }
         public int Price { get; }
-
         public List<Ingredient> Ingredients { get; set; }
         public List<Ingredient> ExtraIngredients { get; set; }
         public Pizza()

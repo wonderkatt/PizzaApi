@@ -1,8 +1,8 @@
 ﻿namespace PizzaApi
 {
-    public class StringFormater
+    public static class StringFormater
     {
-        public static string RemoveSpacesFromString(string value)
+        public static string RemoveSpacesFromString(this string value)
         {
             return value.Replace(" ", "");
         }

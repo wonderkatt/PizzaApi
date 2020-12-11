@@ -5,9 +5,9 @@ namespace PizzaApi
     public class Menu
     {
 
-        public List<MenuItemPizza> Pizzas { get; set; }
+        public List<Pizza> Pizzas { get; set; }
         public List<Drink> Drinks { get; set; }
-        
+        public List<Ingredient> ExtraIngredients { get; set; }
 
     }
 }

@@ -7,5 +7,4 @@ namespace PizzaApi
         public List<PizzaDTO> Pizzas { get; set; }
         public List<int> Drinks { get; set; }
     }
-
 }

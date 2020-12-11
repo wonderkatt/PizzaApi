@@ -6,8 +6,7 @@ namespace PizzaApi
 {
     public class MenuDAL
     {
-        //..\PizzaApi\Files\menu.json
-        private const string MENU_PATH = @"E:\repos\PizzaApi\PizzaApiTest\menu.json";
+        private const string MENU_PATH = @"..\PizzaApi\Files\menu.json";
         public string ReadMenuFromFile()
         {
             var menu = File.ReadAllText(MENU_PATH);
@@ -15,19 +14,19 @@ namespace PizzaApi
             return menu;
         }
 
-        public List<string> GetIngredientsFromMenuForPizza(Pizzas pizzaType)
+        public Pizza GetPizzaFromJsonMenu(Pizzas pizzaType)
         {
             var menu = ReadMenuFromFile();
             var deserializedMenu = JsonSerializer.Deserialize<Menu>(menu);
 
             foreach (var pizza in deserializedMenu.Pizzas)
             {
-                if (pizzaType.ToString() == StringFormater.RemoveSpacesFromString(pizza.Name))
+                if (pizzaType.ToString() == pizza.Name.RemoveSpacesFromString())
                 {
-                    return pizza.Ingredients;
+                    return pizza;
                 }
             }
-            throw new NoIngredientsFoundException(pizzaType.ToString());
+            throw new ItemNotFoundException(pizzaType.ToString());
         }
     }
 }
