@@ -25,6 +25,8 @@ namespace PizzaApi
             services.AddScoped<IngredientBL>();
             services.AddScoped<PizzaBL>();
             services.AddScoped<MenuBL>();
+            services.AddScoped<OrderBL>();
+
 
             services.AddSingleton<CartSingleton>();
             services.AddSingleton<OrderStoreSingleton>();

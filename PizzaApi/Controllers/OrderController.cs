@@ -10,22 +10,21 @@ namespace PizzaApi
     public class OrderController : ControllerBase
     {
         private readonly CartSingleton _cart;
-        private readonly OrderStoreSingleton _orderStore;
+        private readonly OrderBL _orderBL;
 
-        public OrderController(CartSingleton cart, OrderStoreSingleton orderStore)
+        public OrderController(CartSingleton cart, OrderBL orderBL)
         {
             _cart = cart;
-            _orderStore = orderStore;
+            _orderBL = orderBL;
         }
         [HttpGet]
         public ActionResult GetOrders()
         {
-            var activeOrders = _orderStore.Orders
-                .Where(order => order.Value.Status == Status.InProgress);
-
-            return activeOrders.Any() == false 
+            var orders = _orderBL.GetAllActiveOrders();
+            
+            return orders.Any() == false 
                 ? Ok("No orders in store at the moment") 
-                : Ok(activeOrders);
+                : Ok(orders);
         }
         [HttpPost]
         public ActionResult SaveCurrentOrder()
@@ -34,31 +33,24 @@ namespace PizzaApi
             {
                 return BadRequest("No items in cart");
             }
-            var orderId = _orderStore.Orders.Count;
-            _cart.Order.Status = Status.InProgress;
-            _cart.Order.OrderTime = DateTime.Now;
-            _orderStore.Orders.Add(orderId, _cart.Order);
-            _cart.Order = new Order();
-            
+
+            var orderId = _orderBL.SaveOrderInCartToOrderStore();
+
             return Ok("Contents in cart saved with order id: "+ orderId);
 
         }
         [HttpPatch]
         public ActionResult UpdateOrderStatus([FromBody]UpdateOrderStatusRequest request)
         {
-            Order order = new Order();
+            var order = new Order();
             try
             {
-                order = _orderStore.Orders[request.Id];
-                if (order.Status != Status.InProgress)
-                {
-                    throw new OrderInactiveException(request.Id.ToString());
-                }
+                order = _orderBL.UpdateStatusOfOrderInRequest(request);
             }
             catch (OrderInactiveException e)
             {
                 
-                NotFound($"The order with id _{e.Message}_ is no longer active");
+                NotFound($"The order with id _{request.Id}_ is no longer active");
                 
             }
             catch (KeyNotFoundException)
@@ -66,9 +58,6 @@ namespace PizzaApi
                 NotFound("No order with that ID was found");
                 throw;
             }
-
-            order.Status = request.OrderSuccessful ? Status.Completed : Status.Cancelled;
-
             return Ok($"Order with id {request.Id} was updated to {order.Status}");
         }
 
