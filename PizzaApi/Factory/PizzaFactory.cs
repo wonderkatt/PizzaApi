@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace PizzaApi
+﻿namespace PizzaApi
 {
     public abstract class PizzaFactory 
     {

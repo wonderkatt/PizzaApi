@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -47,7 +46,7 @@ namespace PizzaApi
             {
                 order = _orderBL.UpdateStatusOfOrderInRequest(request);
             }
-            catch (OrderInactiveException e)
+            catch (OrderInactiveException)
             {
                 
                 NotFound($"The order with id _{request.Id}_ is no longer active");
@@ -60,7 +59,5 @@ namespace PizzaApi
             }
             return Ok($"Order with id {request.Id} was updated to {order.Status}");
         }
-
-
     }
 }
