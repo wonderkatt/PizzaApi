@@ -17,15 +17,5 @@ namespace PizzaApi
                 _ => throw new ItemNotFoundException(drinkId.ToString())
             };
         }
-
-        public List<Drink> GetAllDrinksOnMenu()
-        {
-            return new List<Drink>
-            {
-                new Drink(Drinks.Coke.ToString(), Price20),
-                new Drink(Drinks.Fanta.ToString(), Price20),
-                new Drink(Drinks.Sprite.ToString(), Price25)
-            };
-        }
     }
 }

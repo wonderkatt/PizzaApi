@@ -10,7 +10,7 @@
             _menuDAL = new MenuDAL();
         }
 
-        public Pizza GetPizzaFromMenu(Pizzas pizzaType)
+        protected Pizza GetPizzaFromMenu(Pizzas pizzaType)
         {
             return _menuDAL.GetPizzaFromJsonMenu(pizzaType);
         }

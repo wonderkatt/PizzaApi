@@ -5,7 +5,9 @@ namespace PizzaApi
 {
     public class MenuDAL
     {
-        private const string MENU_PATH = @"..\PizzaApi\Files\menu.json";
+
+        //..\PizzaApi\Files\menu.json
+        private const string MENU_PATH = @"E:\repos\PizzaApi\PizzaApi\Files\menu.json";
         public string ReadMenuFromFile()
         {
             var menu = File.ReadAllText(MENU_PATH);

@@ -4,7 +4,7 @@
     {
         public override Pizza GetPizza()
         {
-            return GetPizzaFromMenu(Pizzas.Margerita);
+            return GetPizzaFromMenu(Pizzas.Hawaii);
         }
     }
 }
