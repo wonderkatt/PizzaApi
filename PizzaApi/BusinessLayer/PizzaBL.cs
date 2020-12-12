@@ -11,13 +11,13 @@ namespace PizzaApi
         private readonly QuatroStagioniFactory _quatroStagioniFactory;
         private readonly IngredientBL _ingredientBL;
 
-        public PizzaBL()
+        public PizzaBL(IngredientBL ingredientBL)
         {
             _margeritaFactory = new MargeritaFactory();
             _hawaiiFactory = new HawaiiFactory();
             _kebabFactory = new KebabFactory();
             _quatroStagioniFactory = new QuatroStagioniFactory();
-            _ingredientBL = new IngredientBL();
+            _ingredientBL = ingredientBL;
         }
         public List<Pizza> GetAllPizzasOnMenu()
         {

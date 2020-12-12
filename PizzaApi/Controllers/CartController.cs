@@ -16,14 +16,14 @@ namespace PizzaApi.Controllers
         private readonly OrderBL _orderBL;
         private readonly CartBL _cartBL;
 
-        public CartController(CartSingleton cart, CartBL cartBL)
+        public CartController(CartSingleton cart, CartBL cartBL, PizzaBL pizzaBL, DrinkBL drinkBL, OrderBL orderBL, IngredientBL ingredientBL)
         {
             _cart = cart;
-            _pizzaBL = new PizzaBL();
-            _drinkBL = new DrinkBL();
-            _ingredientBL = new IngredientBL();
-            _orderBL = new OrderBL();
             _cartBL = cartBL;
+            _pizzaBL = pizzaBL;
+            _drinkBL = drinkBL;
+            _ingredientBL = ingredientBL;
+            _orderBL = orderBL;
         }
 
         [HttpGet]

@@ -8,9 +8,9 @@ namespace PizzaApi.Controllers
     {
         private readonly MenuBL _menuBL;
 
-        public MenuController()
+        public MenuController(MenuBL menuBL)
         {
-            _menuBL = new MenuBL();
+            _menuBL = menuBL;
         }
         [HttpGet]
         public ActionResult GetFullMenu()

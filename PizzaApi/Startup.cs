@@ -21,6 +21,12 @@ namespace PizzaApi
         {
             services.AddControllers();
             services.AddScoped<CartBL>();
+            services.AddScoped<DrinkBL>();
+            services.AddScoped<IngredientBL>();
+            services.AddScoped<PizzaBL>();
+            services.AddScoped<OrderBL>();
+            services.AddScoped<MenuBL>();
+
             services.AddSingleton<CartSingleton>();
             services.AddSingleton<OrderStoreSingleton>();
             services.AddSwaggerGen(c =>

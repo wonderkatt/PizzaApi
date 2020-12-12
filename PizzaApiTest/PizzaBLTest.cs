@@ -10,7 +10,8 @@ namespace PizzaApiTest
         [TestMethod]
         public void CreatePizzaFromId_ShouldCreateMargarita()
         {
-            var pizzaBL = new PizzaBL();
+            var ingredientBL = new IngredientBL();
+            var pizzaBL = new PizzaBL(ingredientBL);
             var id = 1;
             var expected = "Margerita";
             var pizza = pizzaBL.CreatePizzaFromId(id);
@@ -22,7 +23,8 @@ namespace PizzaApiTest
         {
             var margeritaFactory = new MargeritaFactory();
             var ingredientFactory = new IngredientFactory();
-            var pizzaBL = new PizzaBL();
+            var ingredientBL = new IngredientBL();
+            var pizzaBL = new PizzaBL(ingredientBL);
             var pizzaDTO = new PizzaDTO
             {
                 Id = 1,
@@ -42,7 +44,8 @@ namespace PizzaApiTest
         [TestMethod]
         public void GetAllPizzas_ShouldCreateAllPizzas()
         {
-            var pizzaBL = new PizzaBL();
+            var ingredientBL = new IngredientBL();
+            var pizzaBL = new PizzaBL(ingredientBL);
             var expected = 4;
 
             var actual = pizzaBL.GetAllPizzasOnMenu();
