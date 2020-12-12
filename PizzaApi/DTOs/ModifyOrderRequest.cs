@@ -4,7 +4,7 @@ namespace PizzaApi
 {
     public class ModifyOrderRequest
     {
-        public List<OrderItemDTO> Pizzas { get; set; }
+        public List<ModifyPizzaDTO> Pizzas { get; set; }
     }
 
 

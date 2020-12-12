@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace PizzaApi
 {
-    public class OrderItemDTO
+    public class ModifyPizzaDTO
     {
         public int Id { get; set; }
         public List<int> Ingredients { get; set; }
