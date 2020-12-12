@@ -10,22 +10,13 @@ namespace PizzaApi.Controllers
     public class CartController : ControllerBase
     {
         private readonly CartSingleton _cart;
-        private readonly PizzaBL _pizzaBL;
-        private readonly DrinkBL _drinkBL;
-        private readonly IngredientBL _ingredientBL;
-        private readonly OrderBL _orderBL;
         private readonly CartBL _cartBL;
 
-        public CartController(CartSingleton cart, CartBL cartBL, PizzaBL pizzaBL, DrinkBL drinkBL, OrderBL orderBL, IngredientBL ingredientBL)
+        public CartController(CartSingleton cart, CartBL cartBL)
         {
             _cart = cart;
             _cartBL = cartBL;
-            _pizzaBL = pizzaBL;
-            _drinkBL = drinkBL;
-            _ingredientBL = ingredientBL;
-            _orderBL = orderBL;
         }
-
         [HttpGet]
         public ActionResult GetCartContents()
         {
@@ -34,66 +25,34 @@ namespace PizzaApi.Controllers
         [HttpPost]
         public ActionResult AddItemsToCart([FromBody] AddToOrderRequest request)
         {
-            var pizzasToAdd = new List<Pizza>();
-            var drinksToAdd = new List<Drink>();
             try
             {
-                foreach (var pizza in request.Pizzas)
-                {
-                    pizzasToAdd.Add(_pizzaBL.CreatePizza(pizza));
-                }
-                foreach (var drink in request.Drinks)
-                {
-                    drinksToAdd.Add(_drinkBL.CreateDrink(drink));
-                }
+                _cartBL.AddItemsFromRequestToCart(request);
             }
             catch (ItemNotFoundException e)
             {
                 return BadRequest(e.Message);
             }
-            _cartBL.StoreCollectionInCart(pizzasToAdd, drinksToAdd);
-            _orderBL.SetTotalPrice(_cart.Order);
             return Ok();
         }
-
         [HttpPatch]
         public ActionResult UpdatePizzasInCart([FromBody] ModifyOrderRequest request)
         {
             try
             {
-                foreach (var orderItem in request.Pizzas)
-                {
-                    _cart.Order.Pizzas[orderItem.Id].ExtraIngredients =
-                        _ingredientBL.GetIngredients(orderItem.Ingredients);
-                }
+                _cartBL.UpdatePizzasAsPerRequest(request);
             }
             catch (ItemNotFoundException e)
             {
                 return BadRequest(e.Message);
             }
-            _orderBL.SetTotalPrice(_cart.Order);
             return Ok();
-
         }
         [HttpDelete]
         public ActionResult RemoveItemsInCart([FromBody] RemoveItemsRequest request)
         {
-            foreach (var id in request.PizzaIds.Where(id => _cart.Order.Pizzas.ContainsKey(id)))
-            {
-                _cart.Order.Pizzas.Remove(id);
-            }
-            foreach (var id in request.DrinkIds.Where(id => _cart.Order.Drinks.ContainsKey(id)))
-            {
-                _cart.Order.Drinks.Remove(id);
-            }
-            _orderBL.SetTotalPrice(_cart.Order);
+            _cartBL.RemoveItemsInRequest(request);
             return NoContent();
         }
-    
-
     }
-
-
-
-
 }
