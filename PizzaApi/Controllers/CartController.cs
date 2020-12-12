@@ -13,14 +13,17 @@ namespace PizzaApi.Controllers
         private readonly PizzaBL _pizzaBL;
         private readonly DrinkBL _drinkBL;
         private readonly IngredientBL _ingredientBL;
+        private readonly OrderBL _orderBL;
+        private readonly CartBL _cartBL;
 
-        public CartController(CartSingleton cart)
+        public CartController(CartSingleton cart, CartBL cartBL)
         {
             _cart = cart;
             _pizzaBL = new PizzaBL();
             _drinkBL = new DrinkBL();
             _ingredientBL = new IngredientBL();
-
+            _orderBL = new OrderBL();
+            _cartBL = cartBL;
         }
 
         [HttpGet]
@@ -48,7 +51,8 @@ namespace PizzaApi.Controllers
             {
                 return BadRequest(e.Message);
             }
-            StoreCollectionsInCart(pizzasToAdd, drinksToAdd);
+            _cartBL.StoreCollectionInCart(pizzasToAdd, drinksToAdd);
+            _orderBL.SetTotalPrice(_cart.Order);
             return Ok();
         }
 
@@ -67,14 +71,13 @@ namespace PizzaApi.Controllers
             {
                 return BadRequest(e.Message);
             }
-
+            _orderBL.SetTotalPrice(_cart.Order);
             return Ok();
 
         }
         [HttpDelete]
         public ActionResult RemoveItemsInCart([FromBody] RemoveItemsRequest request)
         {
-            
             foreach (var id in request.PizzaIds.Where(id => _cart.Order.Pizzas.ContainsKey(id)))
             {
                 _cart.Order.Pizzas.Remove(id);
@@ -83,20 +86,10 @@ namespace PizzaApi.Controllers
             {
                 _cart.Order.Drinks.Remove(id);
             }
-            //TODO: Should return 404 when resource can't be found
-            return Ok();
+            _orderBL.SetTotalPrice(_cart.Order);
+            return NoContent();
         }
-        private void StoreCollectionsInCart(IEnumerable<Pizza> pizzasToAdd, IEnumerable<Drink> drinksToAdd)
-        {
-            foreach (var pizza in pizzasToAdd)
-            {
-                _cart.Order.Pizzas.Add(_cart.Order.Pizzas.Count, pizza);
-            }
-            foreach (var drink in drinksToAdd)
-            {
-                _cart.Order.Drinks.Add(_cart.Order.Drinks.Count, drink);
-            }
-        }
+    
 
     }
 

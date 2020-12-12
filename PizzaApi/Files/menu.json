@@ -3,6 +3,7 @@
     {
       "Id": 1,
       "Name": "Margerita",
+      "BasePrice": 95,
       "Ingredients": [
         {
           "Id": 11,
@@ -14,8 +15,7 @@
           "Name": "Tomato Sauce",
           "Price": 0
         }
-      ],
-      "Price": 85
+      ]
     },
     {
       "Id": 2,
@@ -41,12 +41,13 @@
           "Name": "Pineapple",
           "Price": 0
         }
-      ],
-      "Price": 95
+      ]
+      
     },
     {
       "Id": 3,
       "Name": "Kebab",
+      "BasePrice": 115,
       "Ingredients": [
         {
           "Id": 11,
@@ -93,12 +94,13 @@
           "Name": "Kebab Sauce",
           "Price": 0
         }
-      ],
-      "Price": 115
+      ]
+
     },
     {
       "Id": 4,
       "Name": "Quatro Stagioni",
+      "BasePrice": 115,
       "Ingredients": [
         {
           "Id": 11,
@@ -135,8 +137,8 @@
           "Name": "Artichoke",
           "Price": 0
         }
-      ],
-      "Price": 115
+      ]
+
     }
   ],
   "Drinks": [

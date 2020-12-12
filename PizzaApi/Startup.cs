@@ -20,6 +20,7 @@ namespace PizzaApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddScoped<CartBL>();
             services.AddSingleton<CartSingleton>();
             services.AddSingleton<OrderStoreSingleton>();
             services.AddSwaggerGen(c =>
