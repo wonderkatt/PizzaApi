@@ -1,6 +1,6 @@
-# Pizza API gjord utav Alexander Bertilsson och John Andersson
+### Pizza API gjord utav Alexander Bertilsson och John Andersson
 
-## Design patterns:
+# Design patterns:
 ### 1. Factory pattern. 
 
 Vi valde att använda oss utav factory pattern för att skapa pizzor och ingredienser. Factory Pattern hjälper oss att göra det
@@ -15,7 +15,7 @@ Visitor pattern är ett perfekt mönster för att lösa den uppgiften.
 
 Våran Cart och OrderStore är vad som hanterar våran state och behöver därav vara utav samma instans överallt i projektet. Singleton löser det åt oss.
 
-## Exempel på requests
+# Exempel på requests:
 #### Visar alla varor på menyn med tillhörande Id:n för att kunna beställa dem
     GET /Menu
 #### Visar innehållet i kundvagnen
