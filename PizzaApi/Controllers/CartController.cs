@@ -46,6 +46,10 @@ namespace PizzaApi.Controllers
             {
                 return BadRequest(e.Message);
             }
+            catch (KeyNotFoundException)
+            {
+                return BadRequest("There was no pizza with that id in your cart.");
+            }
             return Ok();
         }
         [HttpDelete]

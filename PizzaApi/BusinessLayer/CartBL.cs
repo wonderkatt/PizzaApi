@@ -34,7 +34,6 @@ namespace PizzaApi
             }
             UpdateTotalPrice();
         }
-
         public void RemoveItemsInRequest(RemoveItemsRequest request)
         {
             foreach (var id in request.PizzaIds.Where(id => _cart.Order.Pizzas.ContainsKey(id)))

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace PizzaApi
@@ -60,7 +61,7 @@ namespace PizzaApi
                 NotFound($"The order with id _{e.Message}_ is no longer active");
                 
             }
-            catch (IndexOutOfRangeException)
+            catch (KeyNotFoundException)
             {
                 NotFound("No order with that ID was found");
                 throw;
