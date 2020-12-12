@@ -2,7 +2,7 @@
 
 namespace PizzaApi
 {
-    public class OrderStoreSingleton
+    public class OrderStoreSingleton 
     {
         public Dictionary<int, Order> Orders;
 
