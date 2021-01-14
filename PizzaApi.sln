@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30711.63
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaApi", "PizzaApi.csproj", "{ED48C544-B88D-4CAC-A2D1-B97A4204286B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaApi", "PizzaApi\PizzaApi.csproj", "{ED48C544-B88D-4CAC-A2D1-B97A4204286B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaApiTest", "..\PizzaApiTest\PizzaApiTest.csproj", "{2E4F0782-6731-4446-B9D8-D9EC352C6722}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaApiTest", "PizzaApiTest\PizzaApiTest.csproj", "{2E4F0782-6731-4446-B9D8-D9EC352C6722}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

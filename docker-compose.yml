@@ -1,0 +1,10 @@
+version: "3.8"
+
+services: 
+  pizza-api:
+    container_name: pizza-api
+    build: 
+      context: ./
+    image: pizza-api:latest
+    ports: 
+      - "8080:80"

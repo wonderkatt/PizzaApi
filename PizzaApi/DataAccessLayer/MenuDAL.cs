@@ -1,13 +1,12 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Text.Json;
 
 namespace PizzaApi
 {
     public class MenuDAL
     {
-
-        //..\PizzaApi\Files\menu.json
-        private const string MENU_PATH = @"E:\repos\PizzaApi\PizzaApi\Files\menu.json";
+        private const string MENU_PATH = @"Files/menu.json";
         public string ReadMenuFromFile()
         {
             var menu = File.ReadAllText(MENU_PATH);
